@@ -1,0 +1,203 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+}
+
+.navbar {
+    /* Add the following properties to hide the navigation bar */
+    position: absolute;
+    top: -100px; /* Change to a negative value that hides the navigation bar completely */
+    left: 0;
+    right: 0;
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+
+/* Hero section */
+#hero {
+    background-image: url(Untitled\ design\ \(2\).gif);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Set background for header section */
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add background image to header section */
+#hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('profile.jpeg'); /* Replace with your desired background image URL */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Start with opacity set to 0 */
+    transition: opacity 0.3s ease-in-out; /* Add transition effect for smooth opacity change */
+}
+
+/* Show header background when scrolling down */
+body.scrolled #hero::after {
+    opacity: 100; /* Set opacity to 100 when scrolled down */
+}
+
+#hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(scroll.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    animation: scrollDownAnimation 1s infinite alternate;
+}
+
+@keyframes scrollDownAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}
+
+/* About section */
+#about {
+    padding: 50px 0;
+    background-color: #333;
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#about .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #444;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.tab:hover {
+    background-color: #555;
+}
+
+.tab.active {
+    background-color: #111;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeInAnimation 0.5s;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Projects section */
+#projects {
+    padding: 50px 0;
+    background-color: #444;
+}
+
+#projects h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Contact section */
+#contact {
+    padding: 50px 0;
+    background-color: #555;
+}
+
+#contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Add the following CSS to your existing code */
+.navbar a:hover {
+    color: #ffbf00; /* Change to your desired hover color */
+    transform: scale(1.1); /* Change to your desired scale value */
+    transition: all 0.3s ease; /* Add smooth transition effect */
+}
